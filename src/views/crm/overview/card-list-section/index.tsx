@@ -129,14 +129,14 @@ const CardListSection = () => {
 		{
 			key: "1",
 			index: 1,
-			satisfactionReason: "倒车雷达有死角，雨刮器不是很到位",
+			satisfactionReason: "倒车雷达有死角",
 			quantity: 11,
 			quantityTrend: 1
 		},
 		{
 			key: "2",
 			index: 2,
-			satisfactionReason: "后座舒适度不够。非长续航续航不太够。",
+			satisfactionReason: "后座舒适度不够",
 			quantity: 9,
 			quantityTrend: 2
 		},
@@ -157,14 +157,14 @@ const CardListSection = () => {
 		{
 			key: "5",
 			index: 5,
-			satisfactionReason: "高速噪音有点大。气温低的话车窗有异响",
+			satisfactionReason: "高速噪音有点大",
 			quantity: 2,
 			quantityTrend: 1
 		},
 		{
 			key: "6",
 			index: 6,
-			satisfactionReason: "前机盖左右两侧，塑料会被老鼠咬",
+			satisfactionReason: "前机盖左右两侧",
 			quantity: 2,
 			quantityTrend: 2
 		},
@@ -178,7 +178,7 @@ const CardListSection = () => {
 		{
 			key: "8",
 			index: 8,
-			satisfactionReason: "维修费用太贵.",
+			satisfactionReason: "维修费用太贵",
 			quantity: 0,
 			quantityTrend: -5
 		},

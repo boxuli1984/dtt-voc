@@ -14,8 +14,8 @@ const Login = () => {
 				</div>
 				<div className="login-form">
 					<div className="login-logo">
-						<img className="login-icon" src={logo} alt="logo" />
-						<span className="logo-text">Hooks-Admin</span>
+						{/* <img className="login-icon" src={logo} alt="logo" /> */}
+						<span className="logo-text">DTT VOC</span>
 					</div>
 					<LoginForm />
 				</div>

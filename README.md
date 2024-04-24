@@ -10,16 +10,6 @@
 
 - 项目更新日志：[CHANGELOG.md](./CHANGELOG.md)
 
-### 一、在线预览地址 👀
-
-- Link：https://hooks.spicyboy.cn
-
-### 二、Git 仓库地址 (欢迎 Star⭐)
-
-- Gitee：https://gitee.com/HalseySpicy/Hooks-Admin
-
-- GitHub：https://github.com/HalseySpicy/Hooks-Admin
-
 ### 三、🔨🔨🔨 项目功能
 
 - 🚀 采用最新技术找开发：React18、React-Router v6、React-Hooks、TypeScript、Vite2
@@ -112,7 +102,7 @@ npm run commit
 ### 六、文件资源目录 📚
 
 ```text
-Hooks-Admin
+DTT-VOC
 ├─ .vscode                # vscode推荐配置
 ├─ public                 # 静态资源文件（忽略打包）
 ├─ src

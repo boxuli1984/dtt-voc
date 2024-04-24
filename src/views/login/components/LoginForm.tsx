@@ -63,7 +63,7 @@ const LoginForm = (props: any) => {
 				>
 					{t("login.reset")}
 				</Button>
-				<Button type="primary" htmlType="submit" loading={loading} icon={<UserOutlined />}>
+				<Button type="primary" htmlType="submit" loading={loading} icon={<UserOutlined />} style={{ marginLeft: "5px" }}>
 					{t("login.confirm")}
 				</Button>
 			</Form.Item>

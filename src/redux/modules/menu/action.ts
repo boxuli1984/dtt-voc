@@ -43,7 +43,6 @@ export const getMenuListAction = async (): Promise<MenuProps> => {
 // * redux-promise《.then/.catch》
 export const getMenuListActionPromise = (): Promise<MenuProps> => {
 	return getMenuList().then((res: any) => {
-		debugger;
 		return {
 			type: types.SET_MENU_LIST,
 			menuList: res.data ? res.data : []
