@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
 import { Select, Card, Col, Row, Button } from "antd";
-import BarItem from "@/views/components/bar-item";
 import FuncBarItem from "@/views/components/bar-item/func-bar-chart";
 import HorizontalBarItem from "@/views/components/horizontal-bar-item";
 import "../index.less";
