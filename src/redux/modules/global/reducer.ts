@@ -10,7 +10,7 @@ const globalState: GlobalState = {
 	language: "",
 	themeConfig: {
 		// 默认 primary 主题颜色
-		primary: "#1890ff",
+		primary: "#263238",
 		// 深色模式
 		isDark: false,
 		// 色弱模式(weak) || 灰色模式(gray)

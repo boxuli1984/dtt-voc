@@ -1,0 +1,174 @@
+.crmOverview-box {
+	min-width: 1035px;
+	font-family: "PingFang SC";
+	.top-module-box {
+		box-sizing: border-box;
+		padding: 0;
+		margin-bottom: 10px;
+		.module-title {
+			font-size: 22px;
+			font-weight: bold;
+			margin: 10px 0;
+		}
+		.module-content {
+			display: flex;
+			flex: 1;
+			gap: 10px;
+			.module-item {
+				box-sizing: border-box;
+				display: flex;
+				flex-direction: column;
+				width: 20%;
+				// height: 48%;
+				padding: 15px 20px;
+				background: #ffffff !important;
+				border-radius: 10px;
+
+				.module-item-name {
+					color: #6b6d71;
+					font-size: 18px;
+					font-weight: bold;
+				}
+				.module-item-value {
+					color: #333;
+					font-size: 28px;
+					font-weight: bold;
+				}
+			}
+		}
+		.module-header {
+			display: flex;
+			justify-content: space-between;
+
+			.bottom-tabs {
+				// padding: 0 20px;
+				line-height: 54px;
+				// background: #e5eaf3;
+				.ant-tabs-nav {
+					margin-bottom: 0;
+				}
+				.ant-segmented-group {
+					padding: 2px 4px;
+				}
+			}
+
+			.date-range {
+				margin-left: 5px;
+			}
+		}
+	}
+
+	.card-section {
+		margin-top: 20px;
+
+		.card-chart-title {
+			font-size: 18px;
+			color: #6b6d71;
+			margin: 5px 10px;
+		}
+		.expect-title {
+			margin: 25px 0 15px;
+		}
+	}
+	.card-section-2 {
+		padding: 0 10px;
+
+		.card-list-header {
+			display: flex;
+			justify-content: space-between;
+
+			.card-list-title {
+				font-size: 18px;
+				color: #6b6d71;
+				font-weight: bold;
+			}
+			.card-list-view-all {
+				font-size: 14px;
+				color: #a6a9ad;
+				text-decoration-line: underline;
+				text-decoration-thickness: 1px;
+				text-underline-offset: 5px; /* 设置下划线距离文字的偏移量为4像素 */
+				margin-right: 10px;
+				cursor: pointer;
+
+				&:hover {
+					font-weight: bold;
+					text-decoration-thickness: 2px;
+				}
+			}
+		}
+		.table-content {
+			padding: 0 10px 0 0;
+			.table-index {
+				width: 22px;
+				text-align: center;
+				border-radius: 15px;
+			}
+			.idx-blue {
+				background-color: #1565c0;
+				color: #fefefe;
+			}
+			.idx-red {
+				background-color: #ef5350;
+				color: #fefefe;
+			}
+			.idx-grey {
+				background-color: #eceff1;
+				color: #333;
+			}
+			.ant-table-thead {
+				th {
+					background-color: transparent;
+					&::before {
+						display: none;
+					}
+				}
+			}
+			.ant-table-tbody {
+				color: #525457;
+			}
+			.ant-statistic-content {
+				font-size: 14px;
+				.ant-statistic-content-prefix {
+					margin: 0;
+				}
+			}
+		}
+	}
+
+	.tabs-section {
+		margin-top: 20px;
+		.ant-tabs-nav {
+			margin-bottom: 0 !important;
+
+			.ant-tabs-tab {
+				padding: 8px 12px !important;
+			}
+			.ant-tabs-ink-bar {
+				height: 3px;
+			}
+		}
+
+		.card-section {
+			margin-top: 0;
+		}
+
+		.tab-satisfaction-header {
+			margin: 0 0 15px;
+			display: flex;
+			justify-content: space-between;
+			.ant-select {
+				margin-right: 5px;
+			}
+			.ant-select-selector {
+				border-radius: 5px;
+			}
+
+			.tab-satisfaction-right-box {
+				.ant-btn {
+					color: #6b6d71;
+				}
+			}
+		}
+	}
+}

@@ -74,13 +74,22 @@ const LayoutMenu = (props: any) => {
 		try {
 			const { data } = await getMenuList();
 			if (!data) return;
-			setMenuList(deepLoopFloat(data));
+
+			const vocData = [
+				{
+					icon: "AreaChartOutlined",
+					title: "用户研究",
+					path: "/crm/overview"
+				}
+			];
+
+			setMenuList(deepLoopFloat(vocData));
 			// 存储处理过后的所有面包屑导航栏到 redux 中
-			setBreadcrumbList(findAllBreadcrumb(data));
+			setBreadcrumbList(findAllBreadcrumb(vocData));
 			// 把路由菜单处理成一维数组，存储到 redux 中，做菜单权限判断
-			const dynamicRouter = handleRouter(data);
+			const dynamicRouter = handleRouter(vocData);
 			setAuthRouter(dynamicRouter);
-			setMenuListAction(data);
+			setMenuListAction(vocData);
 		} finally {
 			setLoading(false);
 		}
@@ -102,7 +111,7 @@ const LayoutMenu = (props: any) => {
 			<Spin spinning={loading} tip="Loading...">
 				<Logo></Logo>
 				<Menu
-					theme="dark"
+					theme="light"
 					mode="inline"
 					triggerSubMenuAction="click"
 					openKeys={openKeys}
