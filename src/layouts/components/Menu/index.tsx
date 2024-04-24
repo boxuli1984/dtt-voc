@@ -72,8 +72,8 @@ const LayoutMenu = (props: any) => {
 	const getMenuData = async () => {
 		setLoading(true);
 		try {
-			const { data } = await getMenuList();
-			if (!data) return;
+			// const { data } = await getMenuList();
+			// if (!data) return;
 
 			const vocData = [
 				{
