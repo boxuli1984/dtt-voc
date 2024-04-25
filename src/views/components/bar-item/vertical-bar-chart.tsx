@@ -1,6 +1,6 @@
-// import * as echarts from "echarts";
+import * as echarts from "echarts";
 import { useEcharts } from "@/hooks/useEcharts";
-import { useState, useEffect, useRef, RefObject } from "react";
+import { useState, useEffect } from "react";
 
 const VerticalBarChart = (props: any) => {
 	const { chartData } = props;
@@ -95,11 +95,11 @@ const VerticalBarChart = (props: any) => {
 						};
 					}),
 					itemStyle: {
-						color: "#1565C0",
-						// color: new echarts.graphic.LinearGradient(0, 1, 0, 0, [
-						// 	{ offset: 0, color: "#1565C0" },
-						// 	{ offset: 1, color: "#1E88E5" }
-						// ]),
+						// color: "#1565C0",
+						color: new echarts.graphic.LinearGradient(0, 1, 1, 0, [
+							{ offset: 0, color: "#1565C0" },
+							{ offset: 1, color: "#1E88E5" }
+						]),
 						borderRadius: [0, 20, 20, 0]
 					},
 					label: {

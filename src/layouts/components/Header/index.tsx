@@ -4,7 +4,7 @@ import CollapseIcon from "./components/CollapseIcon";
 import BreadcrumbNav from "./components/BreadcrumbNav";
 import AssemblySize from "./components/AssemblySize";
 import Language from "./components/Language";
-import Theme from "./components/Theme";
+// import Theme from "./components/Theme";
 import Fullscreen from "./components/Fullscreen";
 import "./index.less";
 
@@ -20,7 +20,7 @@ const LayoutHeader = () => {
 			<div className="header-ri">
 				<AssemblySize />
 				<Language />
-				<Theme />
+				{/* <Theme /> */}
 				<Fullscreen />
 				<span className="username">Hooks</span>
 				<AvatarIcon />

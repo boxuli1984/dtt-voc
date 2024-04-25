@@ -176,6 +176,7 @@ const DrawerFormSection = (props: any) => {
 			<Row gutter={10}>
 				<Col span={24}>
 					<Form
+						className="drawer-form-section"
 						layout="vertical"
 						form={form}
 						onValuesChange={(changedValues, allValues) => onValuesChange(changedValues, allValues)}
