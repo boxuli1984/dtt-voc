@@ -1,10 +1,14 @@
 import { useState } from "react";
-import { Statistic, Card, Col, Row, Table, Drawer } from "antd";
+import { useNavigate } from "react-router-dom";
+import { Statistic, Card, Col, Row, Table } from "antd";
 import { ArrowDownOutlined, ArrowUpOutlined, EditOutlined } from "@ant-design/icons";
 import DrawerFormSection from "../components/drawer-form-section";
 import "../index.less";
 
-const CardListSection = () => {
+const CardListSection = (props: any) => {
+	const { timeOpt, dateRange } = props;
+	const navigate = useNavigate();
+
 	const dataSource1 = [
 		{
 			key: "1",
@@ -268,6 +272,13 @@ const CardListSection = () => {
 		setOpenDrawer(true);
 	};
 
+	const onClickViewAllEvent = (linkType: string) => {
+		const listPath = "/crm/listview";
+
+		const navPath = `${listPath}?viewType=${linkType}&timeOpt=${timeOpt}&dateRange=${dateRange}`;
+		navigate(navPath);
+	};
+
 	return (
 		<>
 			<Card className="card-section-2">
@@ -275,7 +286,9 @@ const CardListSection = () => {
 					<Col span={12}>
 						<div className="card-list-header">
 							<div className="card-list-title">Top原因</div>
-							<div className="card-list-view-all">查看全部</div>
+							<div className="card-list-view-all" onClick={() => onClickViewAllEvent("top")}>
+								查看全部
+							</div>
 						</div>
 						<div className="table-content">
 							<Table dataSource={dataSource1} columns={columns1} pagination={false} size="small" />
@@ -284,7 +297,9 @@ const CardListSection = () => {
 					<Col span={12}>
 						<div className="card-list-header">
 							<div className="card-list-title">新增原因</div>
-							<div className="card-list-view-all">查看全部</div>
+							<div className="card-list-view-all" onClick={() => onClickViewAllEvent("new")}>
+								查看全部
+							</div>
 						</div>
 						<div className="table-content">
 							<Table dataSource={dataSource2} columns={columns2} pagination={false} size="small" />

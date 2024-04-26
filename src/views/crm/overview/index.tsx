@@ -8,18 +8,28 @@ import "./index.less";
 
 const CrmOverview = () => {
 	const { RangePicker } = DatePicker;
-	const onChange = (key: any) => {
-		console.log(key);
-	};
 
 	const tabsList = [
-		{ label: "今日", value: 1 },
-		{ label: "本周", value: 2 },
-		{ label: "近一月", value: 3 },
-		{ label: "近三月", value: 4 },
-		{ label: "近半年", value: 5 },
-		{ label: "近一年", value: 6 }
+		{ label: "今日", value: "1" },
+		{ label: "本周", value: "2" },
+		{ label: "近一月", value: "3" },
+		{ label: "近三月", value: "4" },
+		{ label: "近半年", value: "5" },
+		{ label: "近一年", value: "6" }
 	];
+	const [timeOpt, setTimeOpt] = useState<any>("1");
+	const onChangeTimeOpt = (key: any) => {
+		setTimeOpt(key);
+	};
+	const [dateRangeVal, setDateRangeVal] = useState<any>("");
+	const [dateRangeArr, setDateRangeArr] = useState<any>([]);
+	const onChangeRangePickerEvent = (dates: any, dateStrings: any) => {
+		const dateRangeStr = dateStrings.join(",");
+		setDateRangeVal(dateRangeStr);
+
+		setDateRangeArr(dates);
+		setTimeOpt("");
+	};
 
 	const [chartHeader1, setChartHeader1] = useState<any>({});
 	const [footerObj1, setFooterObj1] = useState<any>({});
@@ -82,10 +92,19 @@ const CrmOverview = () => {
 							// size="large"
 							options={tabsList}
 							onChange={val => {
-								onChange(val);
+								onChangeTimeOpt(val);
+								setDateRangeArr([]);
 							}}
+							value={timeOpt}
 						/>
-						<RangePicker className="date-range" />
+						<RangePicker
+							className="date-range"
+							size="large"
+							onChange={(dates, dateStrings) => {
+								onChangeRangePickerEvent(dates, dateStrings);
+							}}
+							value={dateRangeArr}
+						/>
 					</div>
 				</div>
 				<Card>
@@ -103,10 +122,10 @@ const CrmOverview = () => {
 				</Card>
 
 				<div className="tabs-section">
-					<Tabs defaultActiveKey="1" onChange={onChange}>
+					<Tabs defaultActiveKey="1">
 						<Tabs.TabPane tab="满意度调查" key="1">
 							<BarGroupSection />
-							<CardListSection />
+							<CardListSection timeOpt={timeOpt} dateRange={dateRangeVal} />
 						</Tabs.TabPane>
 						<Tabs.TabPane tab="期待功能调查" key="2">
 							<ExpectGroupSection />

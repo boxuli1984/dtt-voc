@@ -3,6 +3,7 @@
 import { LayoutIndex } from "@/routers/constant";
 import { RouteObject } from "@/routers/interface";
 import CrmOverview from "@/views/crm/overview/index";
+import CrmListView from "@/views/crm/list-view/index";
 
 // crm 模块
 const crmRouter: Array<RouteObject> = [
@@ -17,6 +18,26 @@ const crmRouter: Array<RouteObject> = [
 					requiresAuth: false,
 					title: "用户研究",
 					key: "CrmOverview"
+				},
+				children: [
+					{
+						path: "/crm/overview/listview",
+						element: <CrmListView />,
+						meta: {
+							requiresAuth: false,
+							title: "查看全部",
+							key: "CrmListView"
+						}
+					}
+				]
+			},
+			{
+				path: "/crm/listview",
+				element: <CrmListView />,
+				meta: {
+					requiresAuth: false,
+					title: "查看全部",
+					key: "CrmListView"
 				}
 			}
 		]
