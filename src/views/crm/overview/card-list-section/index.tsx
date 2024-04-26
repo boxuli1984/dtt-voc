@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+// import { useNavigate } from "react-router-dom";
 import { Statistic, Card, Col, Row, Table } from "antd";
 import { ArrowDownOutlined, ArrowUpOutlined, EditOutlined } from "@ant-design/icons";
 import DrawerFormSection from "../components/drawer-form-section";
@@ -7,7 +7,7 @@ import "../index.less";
 
 const CardListSection = (props: any) => {
 	const { timeOpt, dateRange } = props;
-	const navigate = useNavigate();
+	// const navigate = useNavigate();
 
 	const dataSource1 = [
 		{
@@ -275,8 +275,12 @@ const CardListSection = (props: any) => {
 	const onClickViewAllEvent = (linkType: string) => {
 		const listPath = "/crm/listview";
 
+		const originPath = `${window.location.origin}/#`;
 		const navPath = `${listPath}?viewType=${linkType}&timeOpt=${timeOpt}&dateRange=${dateRange}`;
-		navigate(navPath);
+		// navigate(navPath);
+
+		const openUrl = originPath + navPath;
+		window.open(openUrl, "_blank");
 	};
 
 	return (

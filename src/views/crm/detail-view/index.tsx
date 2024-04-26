@@ -1,9 +1,9 @@
 import { useState, useEffect } from "react";
 import moment from "moment";
-import { Table, Segmented, DatePicker, Card, Col, Row, Statistic, Space, Button } from "antd";
-import { ArrowDownOutlined, ArrowUpOutlined, EditOutlined } from "@ant-design/icons";
+import { Table, Segmented, DatePicker, Card, Button, Row, Col } from "antd";
+import { ArrowDownOutlined, ArrowUpOutlined } from "@ant-design/icons";
 import { useLocation } from "react-router-dom";
-
+import DetailLineItem from "@/views/components/detail-line-item";
 import "./index.less";
 
 const CrmDetailView = () => {
@@ -193,37 +193,24 @@ const CrmDetailView = () => {
 			width: 80,
 			align: "center",
 			render: (text: number, record: any) => {
-				if (viewTypeVal == "top") {
-					return (
-						<div className="opt-col">
-							<Button
-								type="link"
-								size="small"
-								onClick={() => {
-									// onClickRowDataEvent(record);
-								}}
-							>
-								查看
-							</Button>
-						</div>
-					);
-				} else {
-					return (
-						<div className="opt-col">
-							<Button type="link" size="small">
-								编辑
-							</Button>
-							<Button type="link" size="small">
-								查看
-							</Button>
-						</div>
-					);
-				}
+				return (
+					<div className="opt-col">
+						<Button
+							type="link"
+							size="small"
+							onClick={() => {
+								alert("开发中");
+							}}
+						>
+							查看
+						</Button>
+					</div>
+				);
 			}
 		}
 	];
 
-	const [viewTypeVal, setViewTypeVal] = useState<any>("");
+	const [subjectNameVal, setSubjectNameVal] = useState<any>("");
 	const [pageHeader, setPageHeader] = useState<any>("");
 	const [timeOpt, setTimeOpt] = useState<any>("");
 	const onChangeTimeOpt = (key: any) => {
@@ -249,23 +236,32 @@ const CrmDetailView = () => {
 		}
 	});
 
+	const [chartHeader1, setChartHeader1] = useState<any>({});
+	const [footerObj1, setFooterObj1] = useState<any>({});
+
 	useEffect(() => {
 		setPageParams();
 
 		setListPaginationFunc();
+
+		setChartHeader1({
+			name: "声音量",
+			value: 943
+		});
+		setFooterObj1({
+			momVal: 81,
+			yoyVal: 11
+		});
 	}, []);
 
 	function setPageParams() {
 		// 获取当前URL中的查询参数
 		const params = new URLSearchParams(urlSearch);
 		// 通过get方法获取特定参数的值
-		const viewTypeValTmp = params.get("viewType");
-		setViewTypeVal(viewTypeValTmp);
-		if (viewTypeValTmp == "top") {
-			setPageHeader("Top原因");
-		} else {
-			setPageHeader("新增原因");
-		}
+		const subjectNameValTmp = params.get("subjectName");
+		setSubjectNameVal(subjectNameValTmp);
+
+		setPageHeader("满意度详情");
 
 		const timeOptVal = params.get("timeOpt");
 		setTimeOpt(timeOptVal);
@@ -317,6 +313,15 @@ const CrmDetailView = () => {
 						/>
 					</div>
 				</div>
+
+				<div className="header-section">
+					<div className="card-title">{subjectNameVal}</div>
+				</div>
+
+				<Card className="card-section-1">
+					<DetailLineItem chartHeader={chartHeader1} footerObj={footerObj1} />
+				</Card>
+
 				<Card className="card-section-2">
 					<div className="table-content">
 						<Table

@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
 import moment from "moment";
-import { useNavigate } from "react-router-dom";
 import { Table, Segmented, DatePicker, Card, Col, Row, Statistic, Space, Button } from "antd";
 import { ArrowDownOutlined, ArrowUpOutlined, EditOutlined } from "@ant-design/icons";
 import { useLocation } from "react-router-dom";
@@ -10,7 +9,6 @@ import "./index.less";
 const CrmListView = () => {
 	const { RangePicker } = DatePicker;
 	const { search: urlSearch } = useLocation();
-	const navigate = useNavigate();
 
 	const tabsList = [
 		{ label: "今日", value: "1" },
@@ -251,10 +249,22 @@ const CrmListView = () => {
 				} else {
 					return (
 						<div className="opt-col">
-							<Button type="link" size="small">
+							<Button
+								type="link"
+								size="small"
+								onClick={() => {
+									alert("开发中");
+								}}
+							>
 								编辑
 							</Button>
-							<Button type="link" size="small">
+							<Button
+								type="link"
+								size="small"
+								onClick={() => {
+									onClickRowDataEvent(record);
+								}}
+							>
 								查看
 							</Button>
 						</div>
@@ -335,8 +345,12 @@ const CrmListView = () => {
 	function onClickRowDataEvent(rData: any) {
 		const listPath = "/crm/detailview";
 
-		const navPath = `${listPath}?viewType=${viewTypeVal}&timeOpt=${timeOpt}&dateRange=${dateRangeVal}`;
-		navigate(navPath);
+		const originPath = `${window.location.origin}/#`;
+		const navPath = `${listPath}?subjectName=${rData?.subjectName}&timeOpt=${timeOpt}&dateRange=${dateRangeVal}`;
+		// navigate(navPath);
+
+		const openUrl = originPath + navPath;
+		window.open(openUrl, "_blank");
 	}
 	return (
 		<div className="crm-list-view-box">
