@@ -4,6 +4,7 @@ import { LayoutIndex } from "@/routers/constant";
 import { RouteObject } from "@/routers/interface";
 import CrmOverview from "@/views/crm/overview/index";
 import CrmListView from "@/views/crm/list-view/index";
+import CrmDetailView from "@/views/crm/detail-view/index";
 
 // crm 模块
 const crmRouter: Array<RouteObject> = [
@@ -38,6 +39,15 @@ const crmRouter: Array<RouteObject> = [
 					requiresAuth: false,
 					title: "查看全部",
 					key: "CrmListView"
+				}
+			},
+			{
+				path: "/crm/detailview",
+				element: <CrmDetailView />,
+				meta: {
+					requiresAuth: false,
+					title: "查看详情",
+					key: "CrmDetailView"
 				}
 			}
 		]
