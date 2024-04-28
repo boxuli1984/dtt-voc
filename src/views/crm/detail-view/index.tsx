@@ -211,6 +211,7 @@ const CrmDetailView = () => {
 	];
 
 	const [subjectNameVal, setSubjectNameVal] = useState<any>("");
+	// const [quantityVal, setQuantityVal] = useState<any>("");
 	const [pageHeader, setPageHeader] = useState<any>("");
 	const [timeOpt, setTimeOpt] = useState<any>("");
 	const onChangeTimeOpt = (key: any) => {
@@ -244,10 +245,6 @@ const CrmDetailView = () => {
 
 		setListPaginationFunc();
 
-		setChartHeader1({
-			name: "声音量",
-			value: 943
-		});
 		setFooterObj1({
 			momVal: 81,
 			yoyVal: 11
@@ -260,6 +257,11 @@ const CrmDetailView = () => {
 		// 通过get方法获取特定参数的值
 		const subjectNameValTmp = params.get("subjectName");
 		setSubjectNameVal(subjectNameValTmp);
+		const quantityValTmp = params.get("quantity");
+		setChartHeader1({
+			name: "声音量",
+			value: quantityValTmp || "943"
+		});
 
 		setPageHeader("满意度详情");
 

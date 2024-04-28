@@ -9,7 +9,7 @@ const DrawerFormSection = (props: any) => {
 	const existSubjectOpts = [
 		{
 			value: 1,
-			label: "电池续航短"
+			label: "软件更新"
 		},
 		{
 			value: 2,

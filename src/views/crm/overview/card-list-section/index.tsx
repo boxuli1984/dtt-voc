@@ -13,9 +13,9 @@ const CardListSection = (props: any) => {
 		{
 			key: "1",
 			index: 1,
-			subjectName: "电池续航短",
-			quantity: 17,
-			quantityTrend: -4
+			subjectName: "软件更新",
+			quantity: 56,
+			quantityTrend: 20
 		},
 		{
 			key: "2",

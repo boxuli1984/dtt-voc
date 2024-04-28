@@ -23,9 +23,9 @@ const CrmListView = () => {
 		{
 			key: "1",
 			index: 1,
-			subjectName: "电池续航短",
-			quantity: 17,
-			quantityTrend: -4
+			subjectName: "软件更新",
+			quantity: 56,
+			quantityTrend: 20
 		},
 		{
 			key: "2",
@@ -346,7 +346,7 @@ const CrmListView = () => {
 		const listPath = "/crm/detailview";
 
 		const originPath = `${window.location.origin}/#`;
-		const navPath = `${listPath}?subjectName=${rData?.subjectName}&timeOpt=${timeOpt}&dateRange=${dateRangeVal}`;
+		const navPath = `${listPath}?subjectName=${rData?.subjectName}&timeOpt=${timeOpt}&dateRange=${dateRangeVal}&quantity=${rData?.quantity}`;
 		// navigate(navPath);
 
 		const openUrl = originPath + navPath;
