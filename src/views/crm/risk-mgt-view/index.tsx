@@ -6,7 +6,7 @@ import { useLocation } from "react-router-dom";
 
 import "./index.less";
 
-const CrmListView = () => {
+const CrmRiskView = () => {
 	const { RangePicker } = DatePicker;
 	const { search: urlSearch } = useLocation();
 
@@ -353,7 +353,7 @@ const CrmListView = () => {
 		window.open(openUrl, "_blank");
 	}
 	return (
-		<div className="crm-list-view-box">
+		<div className="crm-risk-view-box">
 			<div className="top-module-box">
 				<div className="module-header">
 					<div className="module-title">{pageHeader}</div>
@@ -394,4 +394,4 @@ const CrmListView = () => {
 	);
 };
 
-export default CrmListView;
+export default CrmRiskView;

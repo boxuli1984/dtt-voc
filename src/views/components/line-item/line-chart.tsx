@@ -1,15 +1,15 @@
+import { useState, useEffect } from "react";
 import { useEcharts } from "@/hooks/useEcharts";
 
-const LineChart = () => {
-	const data = [
-		{ value: 30, spotName: "周一" },
-		{ value: 90, spotName: "周二" },
-		{ value: 10, spotName: "周三" },
-		{ value: 70, spotName: "周四" },
-		{ value: 57, spotName: "周五" },
-		{ value: 60, spotName: "周六" },
-		{ value: 55, spotName: "周日" }
-	];
+const LineChart = (props: any) => {
+	const { chartData } = props;
+	const [lineChartData, setLineChartData] = useState([]);
+	useEffect(() => {
+		if (chartData) {
+			setLineChartData(chartData);
+		}
+	}, [chartData]);
+
 	const option: any = {
 		tooltip: {
 			trigger: "axis"
@@ -41,7 +41,7 @@ const LineChart = () => {
 		xAxis: [
 			{
 				type: "category",
-				data: data.map((val: any) => {
+				data: lineChartData?.map((val: any) => {
 					return {
 						value: val.spotName
 					};
@@ -105,7 +105,7 @@ const LineChart = () => {
 				// name: "Direct",
 				type: "line",
 				smooth: true,
-				data: data.map((val: any) => {
+				data: lineChartData.map((val: any) => {
 					return {
 						value: val.value
 					};
@@ -125,7 +125,7 @@ const LineChart = () => {
 			}
 		]
 	};
-	const [echartsRef] = useEcharts(option, data);
+	const [echartsRef] = useEcharts(option, lineChartData);
 	return <div ref={echartsRef} className="content-box"></div>;
 };
 

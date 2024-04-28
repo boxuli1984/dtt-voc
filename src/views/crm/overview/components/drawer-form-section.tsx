@@ -110,7 +110,7 @@ const DrawerFormSection = (props: any) => {
 	];
 	const label3Opts = [
 		{ value: 1, label: "车漆" },
-		{ value: 2, label: "价格" },
+		{ value: 2, label: "价格过高" },
 		{ value: 3, label: "路噪" },
 		{ value: 4, label: "风噪" },
 		{ value: 5, label: "软件集成" },

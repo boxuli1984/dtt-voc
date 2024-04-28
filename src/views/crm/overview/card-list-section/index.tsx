@@ -148,8 +148,8 @@ const CardListSection = (props: any) => {
 			quantity: 9,
 			quantityTrend: 2,
 			label1: 20,
-			label2: 10,
-			label3: 2
+			label2: 40,
+			label3: 15
 		},
 		{
 			key: "3",
@@ -273,7 +273,7 @@ const CardListSection = (props: any) => {
 	};
 
 	const onClickViewAllEvent = (linkType: string) => {
-		const listPath = "/crm/listview";
+		const listPath = "/crm/overview/listview";
 
 		const originPath = `${window.location.origin}/#`;
 		const navPath = `${listPath}?viewType=${linkType}&timeOpt=${timeOpt}&dateRange=${dateRange}`;

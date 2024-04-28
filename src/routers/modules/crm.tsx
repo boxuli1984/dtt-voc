@@ -5,6 +5,7 @@ import { RouteObject } from "@/routers/interface";
 import CrmOverview from "@/views/crm/overview/index";
 import CrmListView from "@/views/crm/list-view/index";
 import CrmDetailView from "@/views/crm/detail-view/index";
+import CrmRiskMgtView from "@/views/crm/risk-mgt-view/index";
 
 // crm 模块
 const crmRouter: Array<RouteObject> = [
@@ -19,21 +20,21 @@ const crmRouter: Array<RouteObject> = [
 					requiresAuth: false,
 					title: "用户研究",
 					key: "CrmOverview"
-				},
-				children: [
-					{
-						path: "/crm/overview/listview",
-						element: <CrmListView />,
-						meta: {
-							requiresAuth: false,
-							title: "查看全部",
-							key: "CrmListView"
-						}
-					}
-				]
+				}
+				// children: [
+				// 	{
+				// 		path: "/crm/overview/listview",
+				// 		element: <CrmListView />,
+				// 		meta: {
+				// 			requiresAuth: false,
+				// 			title: "查看全部",
+				// 			key: "CrmListView"
+				// 		}
+				// 	}
+				// ]
 			},
 			{
-				path: "/crm/listview",
+				path: "/crm/overview/listview",
 				element: <CrmListView />,
 				meta: {
 					requiresAuth: false,
@@ -42,12 +43,21 @@ const crmRouter: Array<RouteObject> = [
 				}
 			},
 			{
-				path: "/crm/detailview",
+				path: "/crm/overview/detailview",
 				element: <CrmDetailView />,
 				meta: {
 					requiresAuth: false,
 					title: "查看详情",
 					key: "CrmDetailView"
+				}
+			},
+			{
+				path: "/crm/overview/risk",
+				element: <CrmRiskMgtView />,
+				meta: {
+					requiresAuth: false,
+					title: "风险预警",
+					key: "CrmRiskMgtView"
 				}
 			}
 		]

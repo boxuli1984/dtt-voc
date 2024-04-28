@@ -43,7 +43,7 @@ const BarGroupSection = () => {
 
 		setBarData3([
 			{ value: 1, spotName: "车漆" },
-			{ value: 1, spotName: "价格" },
+			{ value: 1, spotName: "价格过高" },
 			{ value: 3, spotName: "路噪" },
 			{ value: 3, spotName: "风噪" },
 			{ value: 3, spotName: "软件集成" },

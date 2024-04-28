@@ -4,7 +4,7 @@ import LineChart from "./line-chart";
 import "./index.less";
 
 const LineItem = (props: any) => {
-	const { chartHeader, footerObj } = props;
+	const { chartHeader, footerObj, chartData } = props;
 
 	return (
 		<div className="line-item">
@@ -12,9 +12,7 @@ const LineItem = (props: any) => {
 				<div className="echarts-main-header">{chartHeader?.name}</div>
 				<div className="echarts-sub-header">{chartHeader?.value}</div>
 			</div>
-			<div className="module-echarts">
-				<LineChart />
-			</div>
+			<div className="module-echarts">{chartData && <LineChart chartData={chartData} />}</div>
 			<div className="module-echarts-footer">
 				<div className="footer-item">
 					<div className="footer-name">环比</div>

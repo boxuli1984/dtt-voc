@@ -33,12 +33,15 @@ const CrmOverview = () => {
 
 	const [chartHeader1, setChartHeader1] = useState<any>({});
 	const [footerObj1, setFooterObj1] = useState<any>({});
+	const [chartData1, setChartData1] = useState<any>([]);
 
 	const [chartHeader2, setChartHeader2] = useState<any>({});
 	const [footerObj2, setFooterObj2] = useState<any>({});
+	const [chartData2, setChartData2] = useState<any>([]);
 
 	const [chartHeader3, setChartHeader3] = useState<any>({});
 	const [footerObj3, setFooterObj3] = useState<any>({});
+	const [chartData3, setChartData3] = useState<any>([]);
 
 	useEffect(() => {
 		setChartHeader1({
@@ -49,6 +52,15 @@ const CrmOverview = () => {
 			momVal: 81,
 			yoyVal: 0
 		});
+		setChartData1([
+			{ value: 30, spotName: "周一" },
+			{ value: 90, spotName: "周二" },
+			{ value: 10, spotName: "周三" },
+			{ value: 70, spotName: "周四" },
+			{ value: 57, spotName: "周五" },
+			{ value: 60, spotName: "周六" },
+			{ value: 55, spotName: "周日" }
+		]);
 
 		setChartHeader2({
 			name: "最不满意的声音",
@@ -58,6 +70,15 @@ const CrmOverview = () => {
 			momVal: 81,
 			yoyVal: -21
 		});
+		setChartData2([
+			{ value: 20, spotName: "周一" },
+			{ value: 50, spotName: "周二" },
+			{ value: 20, spotName: "周三" },
+			{ value: 40, spotName: "周四" },
+			{ value: 37, spotName: "周五" },
+			{ value: 40, spotName: "周六" },
+			{ value: 75, spotName: "周日" }
+		]);
 
 		setChartHeader3({
 			name: "期待功能的声音",
@@ -67,10 +88,41 @@ const CrmOverview = () => {
 			momVal: 83,
 			yoyVal: 34
 		});
+		setChartData3([
+			{ value: 10, spotName: "周一" },
+			{ value: 30, spotName: "周二" },
+			{ value: 10, spotName: "周三" },
+			{ value: 20, spotName: "周四" },
+			{ value: 20, spotName: "周五" },
+			{ value: 10, spotName: "周六" },
+			{ value: 15, spotName: "周日" }
+		]);
 	}, []);
 
+	function onClickRiskMgtEvent() {
+		const listPath = "/crm/overview/risk";
+
+		const originPath = `${window.location.origin}/#`;
+		const navPath = `${listPath}`;
+		// navigate(navPath);
+
+		const openUrl = originPath + navPath;
+		window.open(openUrl, "_blank");
+	}
 	return (
-		<div className="crmOverview-box">
+		<div className="crm-overview-section">
+			<div className="top-section-header">
+				<div className="top-section-header-left">
+					<div className="top-section-header-user">您好，Xueying Qian</div>
+					<div className="top-section-header-role">DTT Team | Product Manager</div>
+				</div>
+				<div className="top-section-header-right">
+					<div className="top-section-header-right-item" onClick={() => onClickRiskMgtEvent()}>
+						<div className="top-section-header-risk">风险预警</div>
+						<div className="top-section-header-riskval">11</div>
+					</div>
+				</div>
+			</div>
 			<div className="top-module-box">
 				<div className="module-title">部门数据</div>
 				<div className="module-content">
@@ -110,13 +162,13 @@ const CrmOverview = () => {
 				<Card>
 					<Row gutter={10}>
 						<Col span={8}>
-							<LineItem chartHeader={chartHeader1} footerObj={footerObj1}></LineItem>
+							{chartData1 && <LineItem chartHeader={chartHeader1} footerObj={footerObj1} chartData={chartData1}></LineItem>}
 						</Col>
 						<Col span={8}>
-							<LineItem chartHeader={chartHeader2} footerObj={footerObj2}></LineItem>
+							{chartData2 && <LineItem chartHeader={chartHeader2} footerObj={footerObj2} chartData={chartData2}></LineItem>}
 						</Col>
 						<Col span={8}>
-							<LineItem chartHeader={chartHeader3} footerObj={footerObj3}></LineItem>
+							{chartData3 && <LineItem chartHeader={chartHeader3} footerObj={footerObj3} chartData={chartData3}></LineItem>}
 						</Col>
 					</Row>
 				</Card>
