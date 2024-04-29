@@ -294,7 +294,7 @@ const CrmDetailView = () => {
 			<div className="top-module-box">
 				<div className="module-header">
 					<div className="module-title">{pageHeader}</div>
-					<div className="bottom-tabs">
+					<div className="module-tabs">
 						<Segmented
 							// size="large"
 							options={tabsList}

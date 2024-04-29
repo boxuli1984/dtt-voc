@@ -4,6 +4,7 @@ import LineItem from "@/views/components/line-item";
 import BarGroupSection from "./bar-group-section";
 import ExpectGroupSection from "./expect-group-section";
 import CardListSection from "./card-list-section";
+import WorkflowListSection from "../workflow-list-section";
 import "./index.less";
 
 const CrmOverview = () => {
@@ -139,7 +140,7 @@ const CrmOverview = () => {
 			<div className="top-module-box">
 				<div className="module-header">
 					<div className="module-title">分时数据</div>
-					<div className="bottom-tabs">
+					<div className="module-tabs">
 						<Segmented
 							// size="large"
 							options={tabsList}
@@ -184,6 +185,8 @@ const CrmOverview = () => {
 						</Tabs.TabPane>
 					</Tabs>
 				</div>
+
+				<WorkflowListSection />
 			</div>
 		</div>
 	);
