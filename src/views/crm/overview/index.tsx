@@ -5,6 +5,7 @@ import BarGroupSection from "./bar-group-section";
 import ExpectGroupSection from "./expect-group-section";
 import CardListSection from "./card-list-section";
 import WorkflowListSection from "../workflow-list-section";
+import ChinaMapItem from "@/views/components/map-item";
 import "./index.less";
 
 const CrmOverview = () => {
@@ -171,6 +172,14 @@ const CrmOverview = () => {
 						<Col span={8}>
 							{chartData3 && <LineItem chartHeader={chartHeader3} footerObj={footerObj3} chartData={chartData3}></LineItem>}
 						</Col>
+					</Row>
+				</Card>
+				<Card>
+					<Row gutter={10}>
+						<Col span={12}>
+							<ChinaMapItem></ChinaMapItem>
+						</Col>
+						<Col span={12}></Col>
 					</Row>
 				</Card>
 
